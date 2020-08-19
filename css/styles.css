@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+main {
+  height: 100vh;
+}
+
+#loading {
+  z-index: 1000;
+}
+
+#temp h1 {
+  font-size: 5rem;
+}
+
+#temp .degree {
+  font-size: 3rem;
+}
