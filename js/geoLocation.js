@@ -27,7 +27,7 @@ const currentPosition = () => {
 
   if (navigator.geolocation) {
     status.textContent = 'Mencari lokasi ...';
-    navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.watchPosition(success, error, options);
   } else {
     spinner.remove()
     status.textContent = 'Geolocation tidak di support di browser ini';
