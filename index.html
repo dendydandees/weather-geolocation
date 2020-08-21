@@ -16,8 +16,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/styles.css">
   </head>
-  <body class="bg-light">
-    <div id="loading" class="bg-light d-flex flex-column justify-content-center align-items-center vh-100 position-absolute vw-100 overflow-hidden">
+  <body>
+    <div id="loading" class="d-flex flex-column justify-content-center align-items-center vh-100 position-absolute vw-100 overflow-hidden">
       <div class="spinner-border" role="status" id="spinner">
         <span class="sr-only">Loading...</span>
       </div>
@@ -25,12 +25,12 @@
     </div>
 
     <main class="container">
-      <div class="row align-items-start">
-        <div class="col my-4" id="header"></div>
+      <div class="text-white row">
+        <div class="py-3 my-3" id="header"></div>
       </div>
-      <div class="row align-items-end">
-        <div class="col d-flex" id="temp-card"></div>
-        <div class="my-4" id="temp-opt"></div>
+      <div class="row">
+        <div class="shadow rounded-lg text-white d-flex py-4" id="temp-card"></div>
+        <div class="bg-light shadow rounded-lg my-5 py-2" id="temp-opt"></div>
       </div>
     </main>
 

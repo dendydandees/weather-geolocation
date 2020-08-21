@@ -3,17 +3,18 @@ const weatherTemplate = (data) => {
 
   let header = '';
   header += `
-  <h2 class="d-inline-block">${
+  <h1 class="d-inline-block font-weight-bold">${
     data.name
-  }</h2><span class="badge rounded-pill bg-info ml-2 align-top">${
+  }</h1><span class="badge rounded-pill bg-info ml-2 align-top">${
     data.sys.country
   }</span>
-  <p class="text-muted">${moment().format('MMMM D, YYYY | h:mm A')}</p>
+  <p class="font-weight-light">${moment().format('MMMM D, YYYY | h:mm A')}</p>
   `;
 
   let tempCard =  ''
   tempCard += `
   <div class="d-inline-flex" id="temp">
+    <img src="http://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png" alt="weather icon">
     <h1 class="m-0">${Math.round(data.main.temp)}<span class="align-top degree">&deg</span></h1>
   </div>
   <div class="mx-2 d-flex flex-column justify-content-end align-items-start flex-grow-1">
@@ -34,33 +35,39 @@ const weatherTemplate = (data) => {
   let tempOpt = ''
   tempOpt += `
   <div class="row">
-    <div class="col border py-2">
+    <div class="col py-2">
       <p class="small">Feels like</p>
-      <p><strong>${Math.round(data.main.feels_like)} &deg</strong></p>
+      <p class="small"><strong>${Math.round(
+        data.main.feels_like,
+      )} &deg</strong></p>
     </div>
-    <div class="col border py-2">
+    <div class="col py-2">
       <p class="small">Wind</p>
-      <p><strong>${Math.round(data.wind.speed * 3.6)} km/h | ${
+      <p class="small"><strong>${Math.round(data.wind.speed * 3.6)} km/h | ${
     data.wind.deg
   } &deg</strong></p>
     </div>
-    <div class="col border py-2">
+    <div class="col py-2">
       <p class="small">Humidity</p>
-      <p><strong>${Math.round(data.main.humidity)} %</strong></p>
+      <p class="small"><strong>${Math.round(data.main.humidity)} %</strong></p>
     </div>
   </div>
   <div class="row">
-    <div class="col border py-2">
+    <div class="col py-2">
       <p class="small">Visibility</p>
-      <p><strong>${Math.round(data.visibility) / 1000} km</strong></p>
+      <p class="small"><strong>${
+        Math.round(data.visibility) / 1000
+      } km</strong></p>
     </div>
-    <div class="col border py-2">
+    <div class="col py-2">
       <p class="small">Pressure</p>
-      <p><strong>${data.main.pressure} hPa</strong></p>
+      <p class="small"><strong>${data.main.pressure} hPa</strong></p>
     </div>
-    <div class="col border py-2">
+    <div class="col py-2">
       <p class="small">Lat | Long</p>
-      <p><strong>${data.coord.lat} | ${data.coord.lon}</strong></p>
+      <p class="small"><strong>${data.coord.lat} | ${
+    data.coord.lon
+  }</strong></p>
     </div>
   </div>
   `;
