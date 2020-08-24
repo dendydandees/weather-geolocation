@@ -11,28 +11,38 @@ const weatherTemplate = (data) => {
   <p class="font-weight-light">${moment().format('MMMM D, YYYY | h:mm A')}</p>
   `;
 
-  let tempCard =  ''
+  let tempCard = '';
   tempCard += `
   <div class="d-inline-flex" id="temp">
-    <img src="http://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png" alt="weather icon">
-    <h1 class="m-0">${Math.round(data.main.temp)}<span class="align-top degree">&deg</span></h1>
+    <img src="http://openweathermap.org/img/wn/${
+      data.weather[0]['icon']
+    }@2x.png" alt="weather icon">
+    <h1 class="m-0">${Math.round(
+      data.main.temp,
+    )}<span class="align-top degree">&deg</span></h1>
   </div>
   <div class="mx-2 d-flex flex-column justify-content-end align-items-start flex-grow-1">
-    <h6 style="text-transform: capitalize; font-weight: bold;">${data.weather[0]['description']}</h6>
+    <h6 style="text-transform: capitalize; font-weight: bold;">${
+      data.weather[0]['description']
+    }</h6>
     <div class="d-flex">
       <div id="max-temp" class="mr-2">
         <img src="./img/arrow-up.svg" alt="max temp">
-        <span title="Maximum Temperature">${Math.round(data.main.temp_max)} &deg</span>
+        <span class="small" title="Maximum Temperature">${Math.round(
+          data.main.temp_max,
+        )} &deg</span>
       </div>
       <div id="min-temp">
         <img src="./img/arrow-down.svg" alt="min temp">
-        <span title="Mininimum Temperature">${Math.round(data.main.temp_min)} &deg</span>
+        <span class="small" title="Mininimum Temperature">${Math.round(
+          data.main.temp_min,
+        )} &deg</span>
       </div>
     </div>
   </div>
   `;
 
-  let tempOpt = ''
+  let tempOpt = '';
   tempOpt += `
   <div class="row">
     <div class="col py-2">
@@ -73,8 +83,8 @@ const weatherTemplate = (data) => {
   `;
 
   document.querySelector('#header').innerHTML = header;
-  document.querySelector('#temp-card').innerHTML = tempCard
-  document.querySelector('#temp-opt').innerHTML = tempOpt
+  document.querySelector('#temp-card').innerHTML = tempCard;
+  document.querySelector('#temp-opt').innerHTML = tempOpt;
 };
 
 export default {

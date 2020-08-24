@@ -16,6 +16,8 @@ main {
 
 #loading {
   z-index: 1000;
+  height: 100vh;
+  color: white;
 }
 
 #temp h1 {
@@ -27,5 +29,5 @@ main {
 }
 
 #temp-card {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
