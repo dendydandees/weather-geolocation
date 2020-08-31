@@ -1,5 +1,6 @@
-import geoLocation from './geoLocation.js';
-import darkMode from './darkMode.js';
+import 'regenerator-runtime/runtime'
+import geoLocation from './js/geoLocation.js';
+import darkMode from './js/darkMode.js';
 
 const init = () => {
   darkMode.dark();
